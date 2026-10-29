@@ -39,7 +39,7 @@ class Plant:
 
     def show(self) -> str:
         return (f"{self.name}: {self.__height:}" +
-              f"cm, {self.__age} days old")
+                f"cm, {self.__age} days old")
 
     def grow(self) -> None:
         self.__height += 0.8
@@ -54,7 +54,7 @@ def ft_garden_security():
     rose.set_height(-10)
     rose.set_age(-3)
     print("\nCurrent state:", rose.show())
-    
+
 
 if __name__ == "__main__":
     ft_garden_security()

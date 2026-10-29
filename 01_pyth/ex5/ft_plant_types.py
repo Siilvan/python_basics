@@ -71,7 +71,6 @@ class Flower(Plant):
         self.has_bloomed()
 
 
-
 class Tree(Plant):
     def __init__(self, name, height, age, diameter) -> None:
         super().__init__(name, height, age)
@@ -117,7 +116,6 @@ def ft_plant_types():
     rose.bloom()
     print("")
     rose.get_info()
-
 
     print("\n=== Tree")
     oak = Tree("Oak", 200, 365, 5)
