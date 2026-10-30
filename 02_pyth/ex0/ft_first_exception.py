@@ -1,4 +1,4 @@
-def input_temperature(temp_str) -> int:
+def input_temperature(temp_str: int | str) -> int:
     return int(temp_str)
 
 

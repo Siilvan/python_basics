@@ -1,4 +1,4 @@
-def garden_operations(operation_number) -> int:
+def garden_operations(operation_number: int) -> int:
     if operation_number == 0:
         int("abc")
     elif operation_number == 1:
