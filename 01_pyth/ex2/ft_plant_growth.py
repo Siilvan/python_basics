@@ -1,5 +1,6 @@
 class Plant:
-    def __init__(self, name, height, age1, growth_rate) -> None:
+    def __init__(self, name: str, height: float, age1: int,
+                 growth_rate: float) -> None:
         self.name = name
         self.height = height
         self.age1 = age1
@@ -15,7 +16,7 @@ class Plant:
         self.height += self.growth_rate
 
 
-def ft_plant_growth():
+def ft_plant_growth() -> None:
     start_h = 25
     rose = Plant("Rose", start_h, 30, 0.8)
     days = range(1, 8)

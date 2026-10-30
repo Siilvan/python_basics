@@ -1,5 +1,5 @@
 class Plant:
-    def __init__(self, name, height, age) -> None:
+    def __init__(self, name: str, height: float, age: int) -> None:
         self.name = name
         if height >= 0:
             self.__height = height
@@ -13,10 +13,10 @@ class Plant:
             return
         print(f"{self.show()}")
 
-    def get_height(self) -> int:
+    def get_height(self) -> float:
         return self.__height
 
-    def set_height(self, new_height) -> None:
+    def set_height(self, new_height: float) -> None:
         if new_height >= 0:
             self.__height = new_height
             print(f"Height updated: {self.__height} days")
@@ -28,7 +28,7 @@ class Plant:
     def get_age(self) -> int:
         return self.__age
 
-    def set_age(self, new_age) -> None:
+    def set_age(self, new_age: int) -> None:
         if new_age >= 0:
             self.__age = new_age
             print(f"Age updated: {self.__age} days")
@@ -49,7 +49,7 @@ class Plant:
 
 
 class Flower(Plant):
-    def __init__(self, name, height, age, color) -> None:
+    def __init__(self, name: str, height: float, age: int, color: str) -> None:
         super().__init__(name, height, age)
         self.color = color
         self.bloomed = 0
@@ -65,14 +65,15 @@ class Flower(Plant):
         else:
             print(f"{self.name} has not bloomed yet")
 
-    def get_info(self):
+    def get_info(self) -> None:
         print(super().show())
         print(f"Color: {self.color}")
         self.has_bloomed()
 
 
 class Tree(Plant):
-    def __init__(self, name, height, age, diameter) -> None:
+    def __init__(self, name: str, height: float,
+                 age: int, diameter: float) -> None:
         super().__init__(name, height, age)
         self.diameter = diameter
         print(f"Trunk diameter: {self.diameter}cm")
@@ -82,34 +83,34 @@ class Tree(Plant):
               f"{super().get_height():.1f}cm long " +
               f"and {self.diameter:.1f}cm wide.")
 
-    def get_info(self):
+    def get_info(self) -> None:
         print(super().show())
         print(f"Trunk diameter: {self.diameter}cm")
 
 
 class Vegetable(Plant):
-    def __init__(self, name, height, age,
-                 harvest_season, nutritional_value) -> None:
+    def __init__(self, name: str, height: float, age: int,
+                 harvest_season: str, nutritional_value: int) -> None:
         super().__init__(name, height, age)
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
         print(f"Harvest season: {self.harvest_season}")
         print(f"Nutritional value: {self.nutritional_value}")
 
-    def g_a(self, amount) -> None:
+    def grow_and_age(self, amount: int) -> None:
         count = range(1, amount + 1)
         for i in count:
             super().age_plant()
             super().grow()
             self.nutritional_value += 1
 
-    def get_info(self):
+    def get_info(self) -> None:
         print(super().show())
         print(f"Harvest season: {self.harvest_season}")
         print(f"Nutritional value: {self.nutritional_value}")
 
 
-def ft_plant_types():
+def ft_plant_types() -> None:
     print("=== Garden Plant Types ===")
     print("\n=== Flower")
     rose = Flower("Rose", 15, 10, "red")
@@ -123,7 +124,7 @@ def ft_plant_types():
 
     print("\n=== Vegetable")
     tomato = Vegetable("Tomato", 5, 10, "April", 0)
-    tomato.g_a(20)
+    tomato.grow_and_age(20)
     tomato.get_info()
 
 
