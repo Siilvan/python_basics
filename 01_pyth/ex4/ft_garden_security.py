@@ -35,18 +35,20 @@ class Plant:
 def ft_garden_security() -> None:
     print("=== Garden Security System ===")
     rose = Plant("Rose", 15, 10)
+    print(f"Created: {rose.show()}\n")
     ages = [30, -3]
     heights = [25, -10]
     for height in heights:
         rose.set_height(height)
         if rose.get_height() == height:
-            print(f"Height updated: {rose.get_height} days")
+            print(f"Height updated: {rose.get_height()}cm\n")
         else:
             print("Height update rejected")
+    print("")
     for age in ages:
         rose.set_age(age)
         if rose.get_age() == age:
-            print(f"Age updated: {rose.get_age} days")
+            print(f"Age updated: {rose.get_age()} days\n")
         else:
             print("Age update rejected")
     print("\nCurrent state:", rose.show())
