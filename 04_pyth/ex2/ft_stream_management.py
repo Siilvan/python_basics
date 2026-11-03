@@ -23,8 +23,8 @@ def ft_new_content(file_dir: str) -> None:
     print('Transform data:')
     file = open(file_dir, "r")
     content = file.read().splitlines()
-    new_lines = [line + '#' for line in content]
-    new_content = "\n".join(new_lines)
+    new_lines = [line + '#\n' for line in content]
+    new_content = "".join(new_lines)
     print(f'---\n\n{new_content}\n\n---')
     ft_save_file(new_content)
 

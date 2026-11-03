@@ -12,7 +12,7 @@ def secure_archive(file_dir: str,
 
 def ft_vault_security() -> None:
     print("=== Cyber Archives Security ===\n")
-    print("Using 'secure_archive' to read from a non existent file:")
+    print("Using 'secure_archive' to read from a nonexistent file:")
     print(f"{secure_archive("IDontExist.txt")}\n")
     print("Using 'secure_archive' to read from an inaccesible file file:")
     print(f"{secure_archive("/sgoinfre/aamini")}\n")
