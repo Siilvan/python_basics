@@ -1,6 +1,4 @@
 import sys
-import typing
-import io
 
 
 class InvalidArgument(Exception):
@@ -48,7 +46,8 @@ def main() -> None:
     try:
         ft_read_text()
     except OSError as e:
-        print(f"[STDERR] Error opening file '{sys.argv[1]}': {e}", file=sys.stderr)
+        print("[STDERR] Error opening file"
+              f"{sys.argv[1]}': {e}", file=sys.stderr)
     except InvalidArgument as e:
         print(f"[STDERR] Usage: {e}", file=sys.stderr)
 
