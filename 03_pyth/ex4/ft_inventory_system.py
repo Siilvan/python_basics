@@ -30,7 +30,7 @@ def ft_inventory_system() -> None:
     highest, highest_val = "highest", float('-inf')
     lowest, lowest_val = "lowest", float('inf')
     for key in inv.keys():
-        print(f"Item {key} represents"
+        print(f"Item {key} represents "
               f"{(inv[key] / sum(inv.values())) * 100:.1f}%")
         if inv[key] > highest_val:
             highest, highest_val = key, inv[key]
