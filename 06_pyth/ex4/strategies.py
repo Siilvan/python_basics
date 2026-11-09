@@ -15,7 +15,7 @@ class BattleStrategy(ABC):
 
 class NormalStrategy(BattleStrategy):
     def act(self, creature: Creature) -> None:
-        creature.attack()
+        print(creature.attack())
 
     def is_valid(self, creature: Creature) -> bool:
         return True
@@ -23,9 +23,9 @@ class NormalStrategy(BattleStrategy):
 
 class AggressiveStrategy(BattleStrategy):
     def act(self, creature: Creature) -> None:
-        creature.transform()
-        creature.attack()
-        creature.revert()
+        print(creature.transform())
+        print(creature.attack())
+        print(creature.revert())
 
     def is_valid(self, creature: Creature) -> bool:
         if isinstance(creature, Transformcapability):
