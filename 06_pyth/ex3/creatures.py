@@ -1,5 +1,4 @@
-from abc import ABC
-from typing import abstractmethod
+from abc import ABC, abstractmethod
 
 
 class Creature(ABC):
@@ -17,11 +16,11 @@ class Creature(ABC):
 
 class Transformcapability(ABC):
     @abstractmethod
-    def transform() -> None:
+    def transform(self) -> str:
         pass
 
     @abstractmethod
-    def revert() -> None:
+    def revert(self) -> str:
         pass
 
 
@@ -31,12 +30,12 @@ class Flameling(Creature):
 
 
 class Pyrodon(Creature):
-    def attack(self):
+    def attack(self) -> str:
         return f"{self.name} uses Flamethrower!"
 
 
 class Shiftling(Creature, Transformcapability):
-    def __init__(self, name, type):
+    def __init__(self, name: str, type: str) -> None:
         super().__init__(name, type)
         self.attackstr: str = f"{self.name} attacks normally."
 
@@ -46,13 +45,13 @@ class Shiftling(Creature, Transformcapability):
     def revert(self) -> str:
         return "Shiftling returns to normal."
 
-    def transform(self):
+    def transform(self) -> str:
         self.attackstr = f"{self.name} performs a boosted strike!"
         return "Shiftling shifts into a sharper form!"
 
 
 class Morphagon(Creature, Transformcapability):
-    def __init__(self, name, type):
+    def __init__(self, name: str, type: str) -> None:
         super().__init__(name, type)
         self.attackstr: str = f"{self.name} attacks normally."
 
@@ -62,6 +61,6 @@ class Morphagon(Creature, Transformcapability):
     def revert(self) -> str:
         return "Morphagon stabilizes its form."
 
-    def transform(self):
+    def transform(self) -> str:
         self.attackstr = "Morphagon unleashes a devastating morph strike!"
         return "Morphagon morphs into a dragonic battle form!"

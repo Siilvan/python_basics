@@ -1,10 +1,11 @@
 import ex3.factories as fact
+from typing import Any
 
 
 def main() -> None:
-    transform_fact = fact.TransformCreatureFactory
-    base = transform_fact.create_base()
-    evolved = transform_fact.create_evolved()
+    transform_fact = fact.TransformCreatureFactory()
+    base: Any = transform_fact.create_base()
+    evolved: Any = transform_fact.create_evolved()
     print(
         f" base:\n{base.describe()}\n{base.attack()}\n"
         f"{base.transform()}\n{base.attack()}\n{base.revert()}")

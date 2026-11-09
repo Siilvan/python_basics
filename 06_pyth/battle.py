@@ -21,8 +21,8 @@ def test_battle(fct1: fct.CreatureFactory, fct2: fct.CreatureFactory) -> None:
 
 
 def main() -> None:
-    flame_factory = fct.FlameFactory
-    transform_factory = fct.TransformCreatureFactory
+    flame_factory = fct.FlameFactory()
+    transform_factory = fct.TransformCreatureFactory()
     test_factory(flame_factory)
     test_factory(transform_factory)
     test_battle(flame_factory, transform_factory)

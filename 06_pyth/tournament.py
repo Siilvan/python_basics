@@ -15,19 +15,14 @@ def battle(
     print(f"{"\n vs.\n".join(descs)}")
     print("now fight!")
     for enemy, strat in enemies:
-        if not strat.is_valid(strat, enemy):
-            raise Exception(
-                f"Invalid Creature '{type(enemy).__name__}' "
-                f"for this {strat.__name__}"
-            )
-        strat.act(strat, enemy)
+        strat.act(enemy)
 
 
 def main() -> None:
-    flame_fact = facts.FlameFactory
-    transform_fact = facts.TransformCreatureFactory
-    agressive = strats.AggressiveStrategy
-    normal = strats.NormalStrategy
+    flame_fact = facts.FlameFactory()
+    transform_fact = facts.TransformCreatureFactory()
+    agressive = strats.AggressiveStrategy()
+    normal = strats.NormalStrategy()
     print("Tournament 0 (basic)\n"
           " [ (Flameling+Normal), (Shiftling+Aggressive) ]")
     battle([(flame_fact, normal), (transform_fact, agressive)])

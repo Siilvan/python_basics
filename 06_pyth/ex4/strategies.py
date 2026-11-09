@@ -1,5 +1,5 @@
-from typing import abstractmethod
-from abc import ABC
+from abc import ABC, abstractmethod
+from typing import Any
 from ex3.creatures import Creature, Transformcapability
 
 
@@ -23,9 +23,15 @@ class NormalStrategy(BattleStrategy):
 
 class AggressiveStrategy(BattleStrategy):
     def act(self, creature: Creature) -> None:
-        print(creature.transform())
-        print(creature.attack())
-        print(creature.revert())
+        if not self.is_valid(creature):
+            raise Exception(
+                f"Invalid Creature '{type(creature).__name__}' "
+                f"for this {type(self).__name__}"
+            )
+        transform_creature: Any = creature
+        print(transform_creature.transform())
+        print(transform_creature.attack())
+        print(transform_creature.revert())
 
     def is_valid(self, creature: Creature) -> bool:
         if isinstance(creature, Transformcapability):
